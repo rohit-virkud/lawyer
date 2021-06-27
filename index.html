@@ -178,7 +178,7 @@ h1{
             display: flex;
             justify-content: center;
             align-items: center;
-        	bottom: 0;
+        	bottom: 1.5%;
         	z-index: 1;
         }
 
@@ -196,13 +196,15 @@ h1{
 
         .share-icon
         {
-        	width:  auto;
-        	height: min(20vw,10vh);;
+        	width: min(10vw,6vh);
+            height: min(10vw,6vh);
         }
         .save-icon
         {
-        	width:  auto;
-        	height: min(15vw,8vh);
+        	width:  min(12vw,8vh);
+        	height: min(12vw,8vh);
+        	margin-left: 10vw;
+        	margin-right: 10vw;
         }
 
         .share-menu {
@@ -263,7 +265,7 @@ h1{
         font-size: min(3.405vw,1.8vh);
         line-height: min(5.085vw,3vh);
         background: #FFFFFF;
-/* Light Grey */
+        /* Light Grey */
         
         box-sizing: border-box;
         border-radius: 50px;
@@ -312,6 +314,10 @@ h1{
 	        height: 1px;
 	        background-color: white;
 	        margin-bottom: min(12.107vw,6.5vh);
+        }
+        .share-text
+        {
+        	margin-top: 2vw;
         }
 
         
@@ -433,30 +439,22 @@ h1{
             <div class="fixed-buttons">
 
                <a href="#!"  class="share-icon-holder"  onclick="openShare()">
-               	<img src = "share.svg"   alt="share" class="share-icon" />
+               	<img src = "share-button.png" alt="share" class="share-icon" />
             
                	<p class="share-text">share</p>
                </a>
 
                <a href="#!" class="share-icon-holder">
-                <img src="save.svg" alt="share" class="save-icon" />
-                <p class="share-text">save my contact</p>
+                <img src="save-btn.png" alt="share" class="save-icon" />
+                <p class="share-text">save contacts</p>
                </a>
             	
                <a href="#!" class="share-icon-holder">
-            	<img src="barcode.svg" alt="share" class="share-icon" />
+            	<img src="barcode.png" alt="share" class="share-icon" />
             	<p class="share-text">qr code</p>
                </a>
             </div>
 
-             
-
-       	  	  
-
-
-
-                 
-               
 
 
        	    </div> <!-- container ends -->
