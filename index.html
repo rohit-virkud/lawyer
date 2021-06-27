@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+   <style type="text/css">
+   	*{
+   		margin: 0;
+   		padding: 0;
+   		box-sizing: border-box;
+   		font-family: 'Roboto', sans-serif;
+   	}
+   	body
+   	{
+   		 overflow: hidden; /* Hide scrollbars */ 
+   	}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+   	a{
+    text-decoration: none;
+    color: inherit;
+ }
+
+   	.effect-wrapper
+   	{
+   		align-items: center;
+	    background-color: #000;
+	    border-radius: 26px;
+	    display: flex;
+	    flex-direction: column;
+	    min-height: 100vh;
+	    perspective: 261.111vw;
+	    position: relative;
+	    width: 100%;
+	    overflow:hidden;
+   	}
+   	.effect
+	{
+		overflow: hidden;
+	  transform-origin: 100% 0;
+	  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	  width: 100%;
+	  min-height: 100vh;
+	  background: linear-gradient(179.7deg, #0C201A 0.4%, #05130F 34.65%, rgba(1, 31, 22, 0.98) 70.18%, rgba(0, 40, 28, 0.96) 96.64%);;
+	}
+	.active  {
+  transform: rotateX(-35deg);
+  
+}
+.overlay {
+  background: linear-gradient(#0000001f 0%, #0000009f 80%, #000000bf 100%);
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+.overlayactive {
+  opacity: 1;
+}
+
+.container-wrapper
+{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+
+}
+.container
+{
+	width: 90%;
+	height: 88%;
+	overflow:scroll;
+}
+
+.image
+{
+	margin-top: min(5vw,3vh);
+	border-radius: min(5vw,3vw);
+	width: 100%;
+	height: 25vh;
+	background: url('img.jpg')no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+h1,p{
+	color: white;
+}
+h1{
+	font-size: 6.5vw;
+	font-weight: 700;
+	word-break: break-word;
+}
+.content-margin
+{
+	margin-left: 3vw;
+}
+
+.first-name,.last-name
+{
+	
+	width: 90%;
+	font-size: min(7.5vw,3.5vh);
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-weight: 700;
+	line-height: min(8vw,4vh);	  
+}
+.first-name
+{
+	margin-top: min(5vw,2.5vh);
+}
+.tag
+{
+	width: 90%;
+			
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+			
+	font-size: min(3.2vw,1.6vh);
+	letter-spacing: 0.1em;
+    margin-top: min(2vw,1vh);
+	color: #E9C49A;
+		
+}
+
+
+ .contact-icon
+        {
+            width: min(8vw,5vh);
+            height: min(8vw,5vh);
+        }
+        .contact-container
+        {
+            margin-top: min(5.569vw,3.2vh);
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .cc-top
+        {
+            margin-top: min(10.291vw,5.5vh);
+        }
+        .contact-txt
+        {
+            margin-left: min(4.116vw,2.5vh);
+
+            font-weight: 300;
+            font-size: min(4vw,2vh);
+            line-height:min(6vw,3vh);
+            width: 80%;
+            
+           
+        }
+
+        .fixed-buttons
+        {
+        	width: 90%;
+        	height: 13vh;
+        	
+        	position: fixed;
+        	top: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        	bottom: 0;
+        	z-index: 1;
+        }
+
+        .share-icon-holder
+        {
+        	display: flex;
+		    flex-shrink: 0;
+		    flex-direction: column;
+		    -webkit-box-pack: center;
+		    justify-content: center;
+		    -webkit-box-align: center;
+		    align-items: center;
+		    transition: 0.1s ease-out opacity;
+        }
+
+        .share-icon
+        {
+        	width:  auto;
+        	height: min(20vw,10vh);;
+        }
+        .save-icon
+        {
+        	width:  auto;
+        	height: min(15vw,8vh);
+        }
+
+        .share-menu {
+  background: #06251B;
+  background-blend-mode: screen;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: 60vw;
+  position: absolute;
+  transform: translateY(60vw);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  border-radius: 5vw;
+}
+.open
+{
+	transform: translateY(0vw);
+}
+.share-text
+{
+	font-size: min(3vw,1.5vh);
+}
+
+
+.social-icons
+        {
+            margin-top: min(5vw,2.5vh);
+        }
+        .social-icons a img
+        {
+            width: min(8vw,5vh);
+            height: min(8vw,5vh);
+
+        }
+        .heading-name-03
+        {
+            margin-top: min(8vw,4vh);
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: min(7.264vw,3.5vh);
+            line-height: min(8.475vw,4.2vh);
+            
+        }
+        .mg-lt
+        {
+            margin-left: min(2vw,1vh);
+        }
+        .input
+       {
+        padding-top: min(2.39vw,1.5vh);
+        padding-bottom: min(2.39vw,1.5vh);
+        padding-left: min(3.668vw,1.8vh);
+        padding-right: min(3.668vw,1.8vh);
+        font-family: Roboto;
+        font-style: normal;
+        font-size: min(3.405vw,1.8vh);
+        line-height: min(5.085vw,3vh);
+        background: #FFFFFF;
+/* Light Grey */
+        
+        box-sizing: border-box;
+        border-radius: 50px;
+       
+        border-radius: 50px;
+
+       }
+
+       .form
+       {
+           display: flex;
+           flex-shrink: 0;
+           flex-direction: column;
+           width: 85%;
+       }
+
+        .primary-btn
+        {
+            padding-top: min(2.39vw,1.5vh);
+            padding-bottom: min(2.39vw,1.5vh);
+            padding-left: min(4vw,2vh);
+            padding-right:  min(4vw,2vh);
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: min(3.405vw,1.8vh);
+            line-height: min(5.085vw,3vh);
+            color: #FFFFFF;;
+            background-color: #34413B;
+            border-radius: 50px;
+            background: #E4B464;
+            box-shadow: 0px 4px 20px rgba(86, 84, 84, 0.15);
+            background-size: cover;
+            background-position: center;
+            border: none;
+         
+            /*box-shadow: 0px 2px 4px 50px rgba(255, 223, 161, 0.1);*/
+            display: inline-block;
+            
+
+           
+        }
+
+        
+
+
+
+
+   </style>
+	
+</head>
+<body>
+	<div class="effect-wrapper"> <!-- effect wrapper -->
+       <div class="effect"> <!-- effect -->
+
+       	  <div class="container-wrapper"> <!-- container wrapper -->
+
+       	  	<div class="container"> <!-- container in middle for grid -->
+
+             <div class="image"></div> <!-- top image -->
+             
+             <div class="content-margin"> <!-- margin-class -->
+             	
+             	<h1 class="first-name">George</h1> <!-- first name -->
+                <h1 class="last-name">Papadopoulos</h1> <!-- last name -->
+       	  	    <p class="tag">LAWYER</p> <!-- tag -->
+
+         
+       	  	    <a href="#!" class="contact-container cc-top">  <!-- contacts-container -->
+                    <img src="./phone-icon.png" alt="phone" class="contact-icon" />
+                    <p class="contact-txt">+30 6936503000</p>
+                </a>
+
+                <a href="#!" class="contact-container">
+                    <img src="./home-icon.png" alt="phone" class="contact-icon" />
+                    <p class="contact-txt">+30 2145256352</p>
+                </a>
+
+                <a href="#!" class="contact-container">
+                    <img src="./msg-icon.png" alt="phone" class="contact-icon" />
+                    <p class="contact-txt">info@artcoolcards.gr</p>
+                </a>
+
+                <a href="#!" class="contact-container">
+                    <img src="./location-icon.png" alt="phone" class="contact-icon" />
+                    <p class="contact-txt">Lisikratous 88, Kallithea, 176 74, Athens, Greece</p>
+                </a>
+
+                <a href="#!" class="contact-container" style="margin-bottom: min(12.107vw,6.5vh);">
+                    <img src="./web-icon.png" alt="phone" class="contact-icon" />
+                    <p class="contact-txt">www.artcoolcards.gr</p>
+                </a>
+
+
+                <!-- contacts-container ends-->
+
+
+              <div class="container-03 socialmax" style="margin-top: min(8vw, 4vh);">
+        <h1 class="heading-name-03">Follow Us</h1>
+                <div class="social-icons">
+                    <a href="#!">
+                        <img src="fb.png" alt="fb" />
+                    </a>
+
+                    <a href="#!" class="mg-lt">
+                        <img src="insta.png" alt="insta" />
+                    </a>
+
+                    <a href="#!" class="mg-lt">
+                        <img src="youtube.png" alt="youtube" />
+                    </a>
+
+                    <a href="#!" class="mg-lt">
+                        <img src="telegram.png" alt="telegram" />
+                    </a>
+
+                    <a href="#!" class="mg-lt">
+                        <img src="twitter.png" alt="twitter" />
+                    </a>
+
+                    <a href="#!" class="mg-lt">
+                        <img src="tiktok.png" alt="tiktok" />
+                    </a>
+
+                    <a href="#!" class="mg-lt">
+                        <img src="linkedin.png" alt="linkedin" />
+                    </a>
+                </div>
+                <h1 class="heading-name-03">Our Reviews</h1>
+                <div class="social-icons">
+                    <a href="#!">
+                        <img src="Tripadvisor.png" alt="fb" />
+                    </a>
+
+                    <a href="#!" class="mg-lt">
+                        <img src="bookingcom.png" alt="insta" />
+                    </a>
+
+                </div>
+            </div>    
+        <h1 class="heading-name-03" style="margin-top: min(12vw,6vh);" >Subscribe</h1>
+        <form method="post" class="form" style="margin-top: min(4vw,3vh);" >
+            <input type="name" name="name" placeholder="Enter Your Name"  class="input"/>
+            <input type="email" name="email" placeholder="Enter Your Email" class="input" style=" margin-top: min(4vw,2vh);"/>
+            <div class="button-wrapper">
+            <input type="submit" name="submit" value="SUBMIT" class="primary-btn" style="margin-top: min(4vw,2vh);width: 30%;margin-left:min(1vw,0.5vh);color: #ffffff;margin-bottom: min(10vw,5vh);border: none;" />
+            </div>
+        </form>
+    </div>
+
+
+
+            </div> <!-- margin-class ends -->
+
+            <div class="fixed-buttons">
+
+               <a href="#!"  class="share-icon-holder"  onclick="openShare()">
+               	<img src="share-button.png" alt="share" class="share-icon" />
+               	<p class="share-text">share</p>
+               </a>
+
+               <a href="#!" class="share-icon-holder">
+                <img src="save-btn.png" alt="share" class="save-icon" />
+                <p class="share-text">save my contact</p>
+               </a>
+            	
+               <a href="#!" class="share-icon-holder">
+            	<img src="barcode.png" alt="share" class="share-icon" />
+            	<p class="share-text">qr code</p>
+               </a>
+            </div>
+
+             
+
+       	  	  
+
+
+
+                 
+               
+
+
+       	    </div> <!-- container ends -->
+       	  	
+       	  </div> <!-- container wrapper ends -->
+
+
+       	
+
+       
+       <div class="overlay"></div>
+       	 
+       </div> <!-- effect ends -->
+      
+
+        <div class="share-menu" onclick="closeShare()"></div>
+      
+	</div> <!-- effect-wrapper ends -->
+
+
+
+
+<script type="text/javascript">
+	
+
+  	
+
+  function openShare()
+  {
+  	
+   $( ".effect" ).toggleClass("active");
+   $( ".overlay" ).css("opacity","1");
+   $(".share-icon-holder").css("opacity","0");
+   $( ".share-menu" ).toggleClass("open");
+  }
+
+   function closeShare()
+  {
+  	
+   $( ".effect" ).toggleClass("active");
+   $( ".overlay" ).css("opacity","0");
+   $(".share-icon-holder").css("opacity","1");
+   $( ".share-menu" ).toggleClass("open");
+  }
+
+</script>
+ 
+</body>
+</html>
