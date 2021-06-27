@@ -35,7 +35,6 @@
    	{
    		align-items: center;
 	    background-color: #000;
-	    border-radius: 26px;
 	    display: flex;
 	    flex-direction: column;
 	    min-height: 100vh;
@@ -86,15 +85,21 @@
 	overflow:scroll;
 }
 
-.image
+.image-container
 {
 	margin-top: min(5vw,3vh);
 	border-radius: min(5vw,3vw);
 	width: 100%;
 	height: 25vh;
-	background: url('img.jpg')no-repeat;
-	background-size: cover;
+	
+}
+.image
+{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
 	background-position: center;
+
 }
 h1,p{
 	color: white;
@@ -126,12 +131,10 @@ h1{
 }
 .tag
 {
-	width: 90%;
-			
+	width: 90%;		
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: 900;
-			
+	font-weight: 900;		
 	font-size: min(3.2vw,1.6vh);
 	letter-spacing: 0.1em;
     margin-top: min(2vw,1vh);
@@ -159,20 +162,17 @@ h1{
         .contact-txt
         {
             margin-left: min(4.116vw,2.5vh);
-
             font-weight: 300;
             font-size: min(4vw,2vh);
             line-height:min(6vw,3vh);
             width: 80%;
-            
-           
+
         }
 
         .fixed-buttons
         {
         	width: 90%;
         	height: 13vh;
-        	
         	position: fixed;
         	top: auto;
             display: flex;
@@ -299,12 +299,19 @@ h1{
             background-size: cover;
             background-position: center;
             border: none;
-         
             /*box-shadow: 0px 2px 4px 50px rgba(255, 223, 161, 0.1);*/
             display: inline-block;
             
 
            
+        }
+
+        .line
+        {
+        	width: 90%;
+	        height: 1px;
+	        background-color: white;
+	        margin-bottom: min(12.107vw,6.5vh);
         }
 
         
@@ -323,7 +330,9 @@ h1{
 
        	  	<div class="container"> <!-- container in middle for grid -->
 
-             <div class="image"></div> <!-- top image -->
+             <div class="image-container">
+             	<img src="img.jpg" alt="image" class="image" />
+             </div> <!-- top image -->
              
              <div class="content-margin"> <!-- margin-class -->
              	
@@ -361,8 +370,11 @@ h1{
                 <!-- contacts-container ends-->
 
 
+                <div class="line"></div>
+
+
               <div class="container-03 socialmax" style="margin-top: min(8vw, 4vh);">
-        <h1 class="heading-name-03">Follow Us</h1>
+              <h1 class="heading-name-03">Follow Us</h1>
                 <div class="social-icons">
                     <a href="#!">
                         <img src="fb.png" alt="fb" />
@@ -421,17 +433,18 @@ h1{
             <div class="fixed-buttons">
 
                <a href="#!"  class="share-icon-holder"  onclick="openShare()">
-               	<img src="share-button.png" alt="share" class="share-icon" />
+               	<img src = "share.svg"   alt="share" class="share-icon" />
+            
                	<p class="share-text">share</p>
                </a>
 
                <a href="#!" class="share-icon-holder">
-                <img src="save-btn.png" alt="share" class="save-icon" />
+                <img src="save.svg" alt="share" class="save-icon" />
                 <p class="share-text">save my contact</p>
                </a>
             	
                <a href="#!" class="share-icon-holder">
-            	<img src="barcode.png" alt="share" class="share-icon" />
+            	<img src="barcode.svg" alt="share" class="share-icon" />
             	<p class="share-text">qr code</p>
                </a>
             </div>
