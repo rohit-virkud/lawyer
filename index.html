@@ -17,13 +17,14 @@
    	body
    	{
    		 overflow: hidden; /* Hide scrollbars */ 
+        background-color: #ffffff;
    	}
-::-webkit-scrollbar {
+.container::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
+.container::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
    	a{
@@ -172,7 +173,7 @@ h1{
         .fixed-buttons
         {
         	width: 90%;
-        	height: 13vh;
+        	height: min(26vw,13vh);
         	position: fixed;
         	top: auto;
             display: flex;
@@ -215,7 +216,7 @@ h1{
   flex-wrap: wrap;
   height: 60vw;
   position: absolute;
-  transform: translateY(80vw);
+  transform: translateY(60vw);
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   border-top-left-radius: min(5vw,3vh);
@@ -605,6 +606,20 @@ h1{
    $(".share-icon-holder").css("opacity","1");
    $( ".share-menu" ).toggleClass("open");
   }
+
+
+
+  const clamp = (x, min, max) => Math.max(min, Math.min(x, max));
+const list = document.querySelector(".container");
+const card = document.querySelector(".image");
+list.addEventListener("scroll", (e) => {
+
+    const scale = clamp((200 - list.scrollTop + 1 * 72) / 100, 0, 1);
+    const opacity = clamp((160 - list.scrollTop + 1 * 72) / 60, 0, 1);
+    card.style.transform = `scale(${scale})`;
+    card.style.opacity = `${opacity}`;
+
+});
 
 </script>
  
