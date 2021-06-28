@@ -614,8 +614,8 @@ const list = document.querySelector(".container");
 const card = document.querySelector(".image");
 list.addEventListener("scroll", (e) => {
 
-    const scale = clamp((200 - list.scrollTop + 1 * 72) / 100, 0, 1);
-    const opacity = clamp((160 - list.scrollTop + 1 * 72) / 60, 0, 1);
+    const scale = clamp((400 - list.scrollTop + 1 * 72) / 100, 0, 1);
+    const opacity = clamp((360 - list.scrollTop + 1 * 72) / 60, 0, 1);
     card.style.transform = `scale(${scale})`;
     card.style.opacity = `${opacity}`;
 
