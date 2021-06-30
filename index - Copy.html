@@ -17,14 +17,13 @@
    	body
    	{
    		 overflow: hidden; /* Hide scrollbars */ 
-        background-color: #ffffff;
    	}
-.container::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
-.container::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
    	a{
@@ -51,7 +50,7 @@
 	  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	  width: 100%;
 	  min-height: 100vh;
-	  background: linear-gradient(179.7deg, #0C201A 0.4%, #05130F 34.65%, rgba(1, 31, 22, 0.98) 70.18%, rgba(0, 40, 28, 0.96) 96.64%);;
+	 background: linear-gradient(193.22deg, #FFFFFF 34.11%, #E7DFD5 113.1%);
 	}
 	.active  {
   transform: rotateX(-35deg);
@@ -92,11 +91,7 @@
 	border-radius: min(5vw,3vw);
 	width: 100%;
 	height: 25vh;
-  box-shadow: 0 0.4px 1px rgba(0, 0, 0, 0.026), 0 1px 2.3px rgba(0, 0, 0, 0.045),
-    0 1.9px 4.4px rgba(0, 0, 0, 0.065), 0 3.4px 7.8px rgba(0, 0, 0, 0.094),
-    0 6.3px 14.6px rgba(0, 0, 0, 0.145), 0 15px 35px rgba(0, 0, 0, 0.25);
-    transform-origin: 50% 100%;
-     position: relative;
+  overflow:hidden;
 	
 }
 .image
@@ -105,11 +100,11 @@
 	height: 100%;
 	background-size: contain;
 	background-position: center;
-
+   animation: zoomLoop 10s infinite;
 
 }
 h1,p{
-	color: white;
+	color: black;
 }
 h1{
 	font-size: 6.5vw;
@@ -145,7 +140,8 @@ h1{
 	font-size: min(3.2vw,1.6vh);
 	letter-spacing: 0.1em;
     margin-top: min(2vw,1vh);
-	color: #E9C49A;
+
+  color: #888888;
 		
 }
 
@@ -179,7 +175,7 @@ h1{
         .fixed-buttons
         {
         	width: 90%;
-        	height: min(26vw,13vh);
+        	height: 13vh;
         	position: fixed;
         	top: auto;
             display: flex;
@@ -214,23 +210,20 @@ h1{
         	margin-right: 10vw;
         }
 
-        .share-menu,.share-menu-barcode {
-  background: #06251B;
+        .share-menu {
+  background: #F0ECE6;
   background-blend-mode: screen;
   bottom: 0;
   display: flex;
   flex-wrap: wrap;
   height: 60vw;
   position: absolute;
-  transform: translateY(60vw);
+  transform: translateY(80vw);
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   border-top-left-radius: min(5vw,3vh);
   border-top-right-radius: min(5vw,3vh);
 }
-
-
-   
 .open
 {
 	transform: translateY(0vw);
@@ -335,8 +328,6 @@ h1{
 
         /*share icons*/
 
-
-
         .share-slide
         {
  
@@ -374,7 +365,7 @@ h1{
         .share-headline 
         {
             font-size: min(5vw,2.5vh);
-            color: #ffffff;
+            color: #000000;
             margin-bottom:  min(4vw,3vh);
           
            
@@ -420,33 +411,21 @@ h1{
             width: min(11vw,5vh);
             height: min(11vw,5vh);
         }
+        @keyframes zoomLoop {
+    0% {
 
+      transform: scale(1);
+      
+    }
+    50%{
+      transform: scale(1.1);
+    }
+    
+    100% {
+    transform: scale(1);
 
-        .qr-code-wrapper
-        {
-            width: 100%;
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 0;
-            color: #1D4B7A;
-            align-items: center;
-        }
-        .qr-code-container
-        {
-            
-         
-            transition:  transform 1s ease-out;
-        }
-        .qr-code-container img
-        { 
-            width: min(30vw,20vh);
-            height: min(30vw,20vh);
-           
-           
-        }
-        
-        
+    }
+  }
 
 
 
@@ -461,7 +440,7 @@ h1{
        	  <div class="container-wrapper"> <!-- container wrapper -->
 
        	  	<div class="container"> <!-- container in middle for grid -->
-          
+
              <div class="image-container">
              	<img src="img.jpg" alt="image" class="image" />
              </div> <!-- top image -->
@@ -474,27 +453,27 @@ h1{
 
          
        	  	    <a href="#!" class="contact-container cc-top">  <!-- contacts-container -->
-                    <img src="./phone-icon.png" alt="phone" class="contact-icon" />
+                    <img src="./phone-icon-dark.png" alt="phone" class="contact-icon" />
                     <p class="contact-txt">+30 6936503000</p>
                 </a>
 
                 <a href="#!" class="contact-container">
-                    <img src="./home-icon.png" alt="phone" class="contact-icon" />
+                    <img src="./home-icon-dark.png" alt="phone" class="contact-icon" />
                     <p class="contact-txt">+30 2145256352</p>
                 </a>
 
                 <a href="#!" class="contact-container">
-                    <img src="./msg-icon.png" alt="phone" class="contact-icon" />
+                    <img src="./msg-icon-dark.png" alt="phone" class="contact-icon" />
                     <p class="contact-txt">info@artcoolcards.gr</p>
                 </a>
 
                 <a href="#!" class="contact-container">
-                    <img src="./location-icon.png" alt="phone" class="contact-icon" />
+                    <img src="./location-icon-dark.png" alt="phone" class="contact-icon" />
                     <p class="contact-txt">Lisikratous 88, Kallithea, 176 74, Athens, Greece</p>
                 </a>
 
                 <a href="#!" class="contact-container" style="margin-bottom: min(12.107vw,6.5vh);">
-                    <img src="./web-icon.png" alt="phone" class="contact-icon" />
+                    <img src="./web-icon-dark.png" alt="phone" class="contact-icon" />
                     <p class="contact-txt">www.artcoolcards.gr</p>
                 </a>
 
@@ -565,18 +544,18 @@ h1{
             <div class="fixed-buttons">
 
                <a href="#!"  class="share-icon-holder"  onclick="openShare()">
-               	<img src = "share-button.png" alt="share" class="share-icon" />
+               	<img src = "share-button-dark.png" alt="share" class="share-icon" />
             
                	<p class="share-text">share</p>
                </a>
 
                <a href="#!" class="share-icon-holder">
-                <img src="save-btn.png" alt="share" class="save-icon" />
+                <img src="save-btn-dark.png" alt="share" class="save-icon" />
                 <p class="share-text">save contacts</p>
                </a>
             	
-               <a href="#!" class="share-icon-holder" onclick="openBarcode()">
-            	<img src="barcode.png" alt="share" class="share-icon" />
+               <a href="#!" class="share-icon-holder">
+            	<img src="barcode-dark.png" alt="share" class="share-icon" />
             	<p class="share-text">qr code</p>
                </a>
             </div>
@@ -615,22 +594,6 @@ h1{
 	            </div>
 	        </div>    
         </div>
-
-
-
-        <div class="share-menu-barcode" >
-          <a href="#!" onclick="closeBarcode()">
-            <img src="close-icon.png" alt="close-icon"  class="close-icon"  />
-          </a>
-          
-            <div class="share-slide-share-icons">
-              <h2 class="share-headline">Scan And Share</h2>
-               
-              <div class="qr-code-container" >
-                  <img src="qr.png" alt="qr-img"/>
-              </div>
-          </div>    
-        </div>
       
 	</div> <!-- effect-wrapper ends -->
 
@@ -659,38 +622,6 @@ h1{
    $(".share-icon-holder").css("opacity","1");
    $( ".share-menu" ).toggleClass("open");
   }
-
-
-  function openBarcode()
-  {
-    
-   $( ".effect" ).toggleClass("active");
-   $( ".overlay" ).css("opacity","1");
-   $(".share-icon-holder").css("opacity","0");
-   $( ".share-menu-barcode" ).toggleClass("open");
-  }
-   function closeBarcode()
-  {
-    
-   $( ".effect" ).toggleClass("active");
-   $( ".overlay" ).css("opacity","0");
-   $(".share-icon-holder").css("opacity","1");
-   $( ".share-menu-barcode" ).removeClass("open");
-  }
-
-
-
-  const clamp = (x, min, max) => Math.max(min, Math.min(x, max));
-const list = document.querySelector(".container");
-const card = document.querySelector(".image-container");
-list.addEventListener("scroll", (e) => {
-
-    const scale = clamp((300 - list.scrollTop + 1 * 72) / 100, 0, 1);
-    const opacity = clamp((260 - list.scrollTop + 1 * 72) / 60, 0, 1);
-    card.style.transform = `scale(${scale})`;
-    card.style.opacity = `${opacity}`;
-
-});
 
 </script>
  
